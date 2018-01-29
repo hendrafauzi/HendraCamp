@@ -56,7 +56,7 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 
-var port = process.env.PORT || 8000;
+var port=Number(process.env.PORT || 3000);
 app.listen(port, function() {
     console.log("App is running on port " + port);
 });
