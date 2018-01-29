@@ -55,10 +55,16 @@ app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
+
+var port = process.env.PORT || 8000;
+app.listen(port, function() {
+    console.log("App is running on port " + port);
+});
+
 //config server on c9
- app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("The HendCamp Server Has Started!");
- });
+//  app.listen(process.env.PORT, process.env.IP, function(){
+//     console.log("The HendCamp Server Has Started!");
+//  });
 
 //config server on local-server
 // app.listen('3000', function(){
