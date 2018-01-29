@@ -18,7 +18,9 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index")
     
-mongoose.connect("mongodb://localhost/hend_camp_v9");
+//mongoose.connect("mongodb://localhost/hend_camp_v9");
+mongoose.connect("mongodb://hendra:hendrafoldram48@ds046367.mlab.com:46367/hendcamp");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -54,11 +56,11 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 //config server on c9
-// app.listen(process.env.PORT, process.env.IP, function(){
-//    console.log("The HendCamp Server Has Started!");
-// });
+ app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("The HendCamp Server Has Started!");
+ });
 
 //config server on local-server
-app.listen('3000', function(){
-    console.log('working on 3000');
-});
+// app.listen('3000', function(){
+//     console.log('working on 3000');
+// });
