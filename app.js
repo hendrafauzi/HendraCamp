@@ -18,8 +18,8 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index")
     
-//mongoose.connect("mongodb://localhost/hend_camp_v9");
-mongoose.connect("mongodb://hendra:hendrafoldram48@ds046367.mlab.com:46367/hendcamp");
+mongoose.connect("mongodb://localhost/hend_camp_v9");
+//mongolab deleted by Hendra
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
